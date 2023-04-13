@@ -31,7 +31,7 @@ function search()
 	
 	
 	let xhr = new XMLHttpRequest();
-	xhr.open("POST", "http://192.168.0.212:7800/gib-watcher/search");
+	xhr.open("POST", "https://192.168.0.212:7800/gib-watcher/search");
 	xhr.send(reqXML);
 	
 	/*try {
