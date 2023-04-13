@@ -32,9 +32,9 @@ function search()
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", "http://192.168.0.212:7800/gib-watcher/search");
-	//xhr.send(reqXML);
+	xhr.send(reqXML);
 	
-	try {
+	/*try {
 		xhr.send(reqXML);
 		if (xhr.status != 200) {
 		alert('Error ${xhr.status}: ${xhr.statusText}');
@@ -43,6 +43,7 @@ function search()
 		}
 	} catch(err) {alert("Request failed");}
 	
+	*/
 	
 	
 	
@@ -51,20 +52,19 @@ function search()
 	
 	
 	
+	xhr.onerror = function() {alert("Network Error");};
 	
-	//xhr.onerror = function() {alert("Network Error");};
-	
-	//xhr.onprogress = function(event) {document.getElementById("ID").style.visibility = "visible";};
+	xhr.onprogress = function(event) {document.getElementById("ID").style.visibility = "visible";};
 	//element.style.visibility = 'hidden';      // Hide
 	//element.style.visibility = 'visible';     // Show
 	
 	//xhr.onload = () => alert(xhr.response);
-	/* xhr.onreadystatechange = function() {
+	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4)
 		{
 			alert(xhr.response);
 		}
-	}; */
+	};
 }
 
 
